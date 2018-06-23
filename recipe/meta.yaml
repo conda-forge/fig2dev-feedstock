@@ -17,16 +17,17 @@ build:
 
 requirements:
   build:
-    - toolchain
-    - libpng >=1.6.28,<1.7
-    - jpeg 9*
+    - {{ compiler('c') }}
+  host:
+    - libpng
+    - jpeg
     - ghostscript
     - xorg-libx11
     - xorg-libxpm
     - xorg-libxt
   run:
-    - libpng >=1.6.28,<1.7
-    - jpeg 9*
+    - libpng
+    - jpeg
     - ghostscript
     - xorg-libx11
     - xorg-libxpm
