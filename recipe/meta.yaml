@@ -1,6 +1,6 @@
 {% set name = "fig2dev" %}
-{% set version = "3.2.6a" %}
-{% set sha256 = "5e61a3d9a4f83db4b3199ee82dd54bb65b544369f1e8e38a2606c44cf71667a7" %}
+{% set version = "3.2.7a" %}
+{% set sha256 = "bda219a15efcdb829e6cc913a4174f5a4ded084bf91565c783733b34a89bfb28" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   skip: True  # [win]
 
 requirements:
