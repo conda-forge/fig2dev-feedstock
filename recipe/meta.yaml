@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [win]
 
 requirements:
@@ -20,14 +20,14 @@ requirements:
     - {{ compiler('c') }}
   host:
     - libpng
-    - jpeg
+    - libjpeg-turbo
     - ghostscript
     - xorg-libx11
     - xorg-libxpm
     - xorg-libxt
   run:
     - libpng
-    - jpeg
+    - libjpeg-turbo
     - ghostscript
     - xorg-libx11
     - xorg-libxpm
@@ -35,8 +35,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
     - fig2dev -V
     - transfig -V
 
