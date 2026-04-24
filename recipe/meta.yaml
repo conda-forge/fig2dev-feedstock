@@ -1,6 +1,6 @@
 {% set name = "fig2dev" %}
-{% set version = "3.2.6a" %}
-{% set sha256 = "5e61a3d9a4f83db4b3199ee82dd54bb65b544369f1e8e38a2606c44cf71667a7" %}
+{% set version = "3.2.9a" %}
+{% set sha256 = "61e185393176852f03b901b3b05b19fbc5ad8258ff142f3da6e70b1b83513326" %}
 
 package:
   name: {{ name|lower }}
@@ -12,12 +12,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
-  skip: True  # [win]
+  number: 0
+  skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - libpng
     - jpeg
@@ -35,8 +36,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
     - fig2dev -V
     - transfig -V
 
